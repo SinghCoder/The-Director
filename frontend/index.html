@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Director — Interactive Visual Roleplay</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@300;400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Screen -->
+    <div id="landing-screen" class="screen active">
+        <div class="landing-content">
+            <h1 class="title">THE DIRECTOR</h1>
+            <p class="subtitle">Every story painted just for you. Every choice changes the world.</p>
+            <p class="description">An AI-powered interactive visual fiction engine with multi-agent characters, AI-generated illustrations, and branching narratives.</p>
+            <div class="genre-grid" id="genre-grid"></div>
+            <div class="custom-premise-section">
+                <label for="custom-premise">Custom premise (optional):</label>
+                <textarea id="custom-premise" placeholder="Describe your own story setting..."></textarea>
+            </div>
+            <button id="start-btn" class="btn-primary" disabled>Begin Your Story</button>
+        </div>
+        <div class="powered-by">Powered by Mistral AI — Agents API • FLUX 1.1 • Mistral Large</div>
+    </div>
+
+    <!-- Game Screen — Infinite Canvas -->
+    <div id="game-screen" class="screen">
+        <div class="canvas-toolbar">
+            <div class="toolbar-left">
+                <div class="toolbar-title">THE DIRECTOR</div>
+            </div>
+            <div class="toolbar-right">
+                <button id="zoom-out-btn" class="tb-btn" title="Zoom Out">−</button>
+                <span id="zoom-level" class="zoom-label">100%</span>
+                <button id="zoom-in-btn" class="tb-btn" title="Zoom In">+</button>
+                <button id="fit-btn" class="tb-btn" title="Fit All Nodes">⊞</button>
+            </div>
+        </div>
+
+        <div id="canvas-container" class="canvas-container">
+            <div id="canvas-world" class="canvas-world">
+                <svg id="canvas-edges" class="canvas-edges"></svg>
+                <div id="canvas-nodes" class="canvas-nodes"></div>
+            </div>
+        </div>
+
+        <!-- Detail Panel (slides in from right) -->
+        <div id="detail-panel" class="detail-panel">
+            <div class="detail-header">
+                <span id="detail-title" class="detail-title">Scene 1</span>
+                <button id="close-detail" class="detail-close">✕</button>
+            </div>
+            <div class="detail-body" id="detail-body"></div>
+        </div>
+
+        <!-- Loading pill -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loading-pill">
+                <div class="spinner-small"></div>
+                <span id="loading-msg">Generating scene...</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

@@ -1,5 +1,11 @@
 # The Director
 
+
+
+https://github.com/user-attachments/assets/fc432646-f9e5-47ac-8475-1e6734a9a848
+
+
+
 **The Director** is a multi-agent, interactive storytelling engine built with the **Mistral Agents API**.  
 Players can start a story in multiple genres, make meaningful choices, branch timelines with “what-if” actions, and see each scene generated as an illustrated visual panel.
 
